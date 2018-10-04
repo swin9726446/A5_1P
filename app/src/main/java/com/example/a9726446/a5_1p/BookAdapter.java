@@ -12,11 +12,15 @@ import java.util.List;
 
 /**
  * Created by 9726446 on 26/9/18 @ LB1-MAC-009
+ * Adapted from Tutorial provided on https://www.androidhive.info/2016/01/android-working-with-recycler-view/ (last accessed 4/10/18)
  */
 
 public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder>{
+
+    //List of Books to view. DataSet for technical purposes.
     private final List<Book> bookList;
 
+    //View to contain the relevant information
     static class BookViewHolder extends RecyclerView.ViewHolder {
         final TextView title;
         final TextView rating;
@@ -34,7 +38,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
         this.bookList = bookList;
     }
 
-    //Create
+    //Creates a view holder while more are needed.
     @NonNull
     @Override
     public BookViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
@@ -43,7 +47,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
         return new BookViewHolder(itemView);
     }
 
-    //Replace
+    //Replaces view holders that are off screen to give the illusion of scrolling.
     @Override
     public void onBindViewHolder(@NonNull BookViewHolder holder, int position){
         //get element

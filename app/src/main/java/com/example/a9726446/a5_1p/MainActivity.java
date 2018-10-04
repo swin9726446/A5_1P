@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+    private static final int NUM_BOOKS = 20;
     private final List<Book> bookList = new ArrayList<>();
     private BookAdapter bookAdapter;
 
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         //I wanted to give something interesting to look at.
         String variety[] = {"nice", "fairly okay", "pretty good", "excellent"};
         int j;
-        for (int i = 0; i < 10; i += 1) {
+        for (int i = 0; i < NUM_BOOKS; i += 1) {
             j = i;
             while (j >= variety.length) j -= variety.length;
             //I acknowledge that the last parameter isn't secure, but what the hey it works in small doses.
